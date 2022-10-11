@@ -41,7 +41,7 @@ public class Converter{
                         while (operationStack.top().equals("^") || operationStack.top().equals("/") || operationStack.top().equals("*")){
                             output.append(operationStack.pop());
                             output.append(" ");
-                            if (operationStack.size()==0){
+                            if (operationStack.size()==0|| operationStack.top().equals("(")){
                                 break;
                             }
                         }
@@ -54,10 +54,10 @@ public class Converter{
                         operationStack.push(tokenslist.get(i));
                     }
                     else{
-                        while (operationStack.top().equals("^")||operationStack.top().equals("/")||operationStack.top().equals( "*") ){
+                        while (operationStack.top().equals("^")||operationStack.top().equals("/")||operationStack.top().equals( "*")){
                             output.append(operationStack.pop());
                             output.append(" ");
-                            if (operationStack.size()==0){
+                            if (operationStack.size()==0 || operationStack.top().equals("(")){
                                 break;
                             }
                         }
